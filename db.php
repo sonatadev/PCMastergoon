@@ -1,16 +1,16 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    // Cookie sicuri — devono essere impostati PRIMA di session_start()
-    ini_set("session.cookie_httponly", 1); // JS non può leggere il cookie
-    ini_set("session.cookie_secure", 1); // Solo HTTPS
-    ini_set("session.cookie_samesite", "Strict"); // Protegge da CSRF
+    ini_set("session.cookie_httponly", 1);
+    ini_set("session.cookie_secure", 1);
+    ini_set("session.cookie_samesite", "Strict");
     session_start();
 }
 
-$host = "db";
-$db = "pcmaster_db";
-$user = "goon_user";
-$pass = "goon_password";
+$host = getenv("DB_HOST") ?: "db";
+$db   = getenv("DB_NAME") ?: "pcmaster_db";
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASS");
+
 $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 
 try {
