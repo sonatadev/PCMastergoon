@@ -1,0 +1,449 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 40%;
+  border-radius: 8px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.admin-table img {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+}
+.btn-open-modal {
+  background: #2ecc71;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* CSS Gestionale PC Master - Basato su stile Carrello */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --danger: #ef4444;
+  --success: #10b981;
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --sidebar-width: 260px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  margin: 0;
+  display: flex; /* Layout a due colonne: sidebar + contenuto */
+}
+
+/* --- CONTENUTO PRINCIPALE --- */
+.admin-content {
+  margin-left: var(--sidebar-width);
+  padding: 40px;
+  width: calc(100% - var(--sidebar-width));
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+/* Pulsante Aggiungi (Stile btn-checkout) */
+.btn-open-modal {
+  background: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transition: all 0.2s;
+  margin-bottom: 30px;
+}
+
+.btn-open-modal:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* --- TABELLA --- */
+.admin-table {
+  width: 100%;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.admin-table th {
+  background: #f8fafc;
+  padding: 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table td {
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Bottoni Azione */
+.btn-detail {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-detail:hover {
+  background: var(--primary-hover);
+}
+
+.btn-delete {
+  /* Elimina */
+  color: var(--danger);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* --- MODAL (FINESTRA) --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6); /* Overlay scuro elegante */
+  backdrop-filter: blur(4px);
+}
+
+/* --- MODAL ADATTIVO CON SCROLL INTERNO --- */
+.modal-content {
+  background: var(--white);
+  margin: 2vh auto;
+  padding: 30px;
+  width: 850px; /* Increased from 500px */
+  max-width: 90%; /* Safety fallback for smaller screens */
+  max-height: 95vh;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rende il form scorrevole se i contenuti (immagini) sono troppi */
+.modal-content form {
+  overflow-y: auto;
+  padding-right: 15px; /* Spazio per la scrollbar */
+}
+
+/* Personalizzazione Scrollbar (estetica) */
+.modal-content form::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content form::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Evidenzia visivamente la riga principale */
+.img-manage-table tr.is-main {
+  background: #f0fdf4;
+  border-left: 4px solid var(--success);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+/* Form dentro il Modal */
+.modal-content label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn-save {
+  width: 100%;
+  background: var(--success);
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* --- Stile per la sezione Elimina nel Modal --- */
+.danger-zone {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px dashed #fee2e2;
+}
+
+.danger-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--danger);
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.btn-delete-modal {
+  width: 100%;
+  background: #fff;
+  color: var(--danger);
+  border: 2px solid var(--danger);
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete-modal:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* --- Modal di Conferma (Pop-up Sicurezza) --- */
+.confirm-overlay {
+  display: none; /* Inizialmente nascosto */
+  position: fixed;
+  z-index: 9999; /* Molto alto per stare sopra a tutto */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8); /* Oscura lo sfondo */
+  backdrop-filter: blur(8px); /* Sfoca il modal sotto */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+}
+
+.confirm-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.2s ease-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.confirm-card h3 {
+  margin-top: 0;
+  color: var(--text-main);
+}
+.confirm-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.confirm-buttons {
+  display: flex;
+  gap: 10px;
+}
+.btn-cancel {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-confirm-final {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: var(--danger);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Container dello switch toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--success);
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Tabella immagini nel modal */
+.img-manage-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  background: #f8fafc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img-manage-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+/* Bottone per aprire il popup nel modal prodotti */
+.btn-delete-small {
+  background: #fee2e2;
+  color: var(--danger);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete-small:hover {
+  background: var(--danger);
+  color: white;
+}

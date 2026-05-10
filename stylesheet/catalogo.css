@@ -1,0 +1,222 @@
+/* =========================================
+   VARIABILI GLOBALI
+   ========================================= */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Pulsante Login speciale se presente */
+.btn-login {
+  background: #2563eb;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: white !important;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   LAYOUT PRINCIPALE
+   ========================================= */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* =========================================
+   SIDEBAR FILTRI
+   ========================================= */
+.filter-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  height: fit-content;
+  box-shadow: var(--shadow);
+}
+
+.filter-sidebar h3 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: 0.2s;
+}
+
+.checkbox-label:hover {
+  color: var(--primary);
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* =========================================
+   GRID PRODOTTI
+   ========================================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  flex-grow: 1;
+}
+
+/* =========================================
+   CARD PRODOTTO
+   ========================================= */
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Gestione Immagine Card */
+.card-img {
+  height: 200px;
+  background: #ffffff; /* Sfondo bianco forzato per i non-png */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Contenuto Card */
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  height: 2.4rem;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.btn-details {
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-details:hover {
+  background: var(--primary-hover);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .filter-sidebar {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}

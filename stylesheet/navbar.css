@@ -1,0 +1,73 @@
+/* NAVBAR UNIFICATA - PC MASTER */
+.navbar {
+  background-color: #1e293b !important;
+  height: 70px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  width: 100% !important;
+}
+
+.nav-container {
+  max-width: 1200px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+
+.nav-brand {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: -1px !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.nav-links a {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  font-family: "Inter", sans-serif !important;
+  transition: color 0.2s ease !important;
+}
+
+.nav-links a:hover {
+  color: #ffffff !important;
+}
+
+.btn-login {
+  background-color: #2563eb !important;
+  color: white !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+}
+
+.btn-logout {
+  color: #f87171 !important;
+  border: 1px solid rgba(248, 113, 113, 0.4) !important;
+  padding: 5px 12px !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+}
+
+.nav-brand img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
