@@ -1,0 +1,148 @@
+/* =========================================
+   CHECKOUT STYLE - PC MASTER
+   ========================================= */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --success: #10b981;
+  --danger: #ef4444;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.checkout-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 15px;
+}
+
+.success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success h1 {
+  color: var(--success);
+  border: none;
+}
+
+.success a {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.error {
+  background-color: #fee2e2;
+  color: var(--danger);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Riepilogo */
+h3 {
+  margin-top: 40px;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+ul li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+}
+
+h2 {
+  text-align: right;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+/* Bottone Finale */
+.btn-buy {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.success a.btn-buy {
+  color: #ffffff !important;
+}
+
+.btn-buy:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}

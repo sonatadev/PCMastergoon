@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# 1. Rimuove .php dall'URL visibile (es. da catalogo.php a catalogo)
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# 2. Se il file richiesto non esiste, prova a cercarlo con estensione .php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]

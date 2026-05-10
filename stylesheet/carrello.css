@@ -1,0 +1,240 @@
+/* CSS per carrello.php - PC Master Shop */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --danger: #ef4444;
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Pulsante LOGIN (Blu) */
+.btn-login {
+  background-color: #2563eb !important;
+  color: white !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  transition: background 0.2s !important;
+}
+
+.btn-login:hover {
+  background-color: #1d4ed8 !important;
+}
+
+/* Pulsante LOGOUT (Rosso/Testo chiaro) */
+.btn-logout {
+  color: #f87171 !important; /* Rosso chiaro per contrasto sullo scuro */
+  font-size: 0.85rem !important;
+  border: 1px solid #f87171 !important;
+  padding: 5px 12px !important;
+  border-radius: 6px !important;
+}
+
+.btn-logout:hover {
+  background-color: rgba(248, 113, 113, 0.1) !important;
+}
+
+/* Pulsante Login speciale se presente */
+.btn-login {
+  background: #2563eb;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: white !important;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 2rem;
+}
+
+thead th {
+  background: #f8fafc;
+  padding: 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 24px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+/* Product styling */
+.img-wrapper {
+  width: 80px;
+  height: 80px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-name {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.qty-badge {
+  background: #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.price-cell {
+  color: var(--text-muted);
+}
+
+.subtotal-cell {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+/* Action Button */
+.btn-remove {
+  color: var(--danger);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.btn-remove:hover {
+  background: #fef2f2;
+}
+
+/* Summary Footer */
+.cart-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.summary {
+  width: 100%;
+  max-width: 350px;
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: var(--text-muted);
+}
+
+.summary-row.total {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid var(--border);
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.btn-checkout {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+.btn-checkout:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h2 {
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}

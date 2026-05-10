@@ -1,0 +1,193 @@
+/* --- Variabili Colore --- */
+:root {
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --success: #27ae60;
+  --bg-light: #f4f7f6;
+  --text-main: #333;
+  --text-muted: #666;
+  --white: #ffffff;
+  --border: #e0e0e0;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Reset e Base --- */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* --- Container Principale --- */
+.admin-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* --- Intestazioni --- */
+h1 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 25px;
+  border-left: 5px solid var(--accent);
+  padding-left: 15px;
+}
+
+/* --- Card Info Ordine --- */
+.order-info-card {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+}
+
+.order-info-card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.order-info-card strong {
+  color: var(--primary);
+  margin-right: 5px; /* Aggiunge solo un piccolo spazio dopo i due punti */
+}
+
+.order-info-card span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* --- Tabella Prodotti --- */
+.order-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.order-table thead {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.order-table th {
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.order-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--white);
+  vertical-align: middle;
+}
+
+.order-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Utility Classes per Tabella --- */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-bold {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Colonna Descrizione */
+.order-table td:first-child {
+  font-weight: 600;
+  color: var(--primary);
+  width: 50%;
+}
+
+/* --- Sezione Totale --- */
+.total-section {
+  margin-top: 25px;
+  padding: 25px;
+  background: #eef2f7;
+  border-radius: 12px;
+  text-align: right;
+  border: 1px solid var(--border);
+}
+
+.total-section h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.total-price {
+  color: var(--accent);
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+/* --- Azioni e Bottoni --- */
+.actions {
+  margin-top: 40px;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 25px;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.btn-back:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .admin-content {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .order-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .order-info-card strong {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

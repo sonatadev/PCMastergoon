@@ -1,0 +1,227 @@
+/* Importa le variabili dal tuo sistema (o definiscile qui se mancano) */
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --dark: #1e293b;
+  --bg: #f8fafc;
+  --white: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Pulsante Login speciale se presente */
+.btn-login {
+  background: #2563eb;
+  padding: 8px 18px;
+  border-radius: 8px;
+  color: white !important;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+}
+
+.btn-login {
+  background: var(--primary);
+  padding: 8px 20px;
+  border-radius: 6px;
+  color: white !important;
+}
+.btn-logout {
+  color: #f87171 !important;
+  font-size: 0.9rem;
+}
+
+/* Hero Section */
+.hero {
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)),
+    url("https://images.unsplash.com/photo-1587202377425-8b90ed50ef9b?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-image: url("../img/PC_Components.jpg");
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+.hero-content p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto 35px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.section-header p {
+  color: var(--text-muted);
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  border: 1px solid var(--border);
+}
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  height: 220px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.card-body {
+  padding: 25px;
+}
+.badge {
+  background: #eff6ff;
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.card-body h3 {
+  font-size: 1.25rem;
+  margin: 15px 0 10px;
+}
+.price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+.btn-card {
+  display: block;
+  text-align: center;
+  background: #f1f5f9;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.btn-card:hover {
+  background: var(--dark);
+  color: white;
+}
+
+/* Footer */
+.main-footer {
+  background: white;
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 100px;
+  text-align: center;
+}
+.footer-content p {
+  margin: 5px 0;
+  color: var(--text-muted);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+  }
+}
