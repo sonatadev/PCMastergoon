@@ -69,10 +69,8 @@ git clone https://github.com/sonatadev/PCMastergoon.git
 4. Run the project using a local server (XAMPP / LAMP / Nginx + PHP)
 
 5. Open in browser:
-
-```
-http://localhost/PCMastergoon
-```
+* **Local:** `http://localhost/PCMastergoon`
+* **Live Demo:** [https://pcmastergoon.duckdns.org](https://pcmastergoon.duckdns.org)
 
 ---
 
